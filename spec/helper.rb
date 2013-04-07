@@ -16,7 +16,7 @@ $LOAD_PATH.unshift(File.dirname(__FILE__))
 require 'simplecov'
 SimpleCov.start
 
-require 'action_views/helpers/countries-states-name-rails'
+require 'action_view/helpers/countries-states-name-rails'
 
 class Test::Unit::TestCase
 end
