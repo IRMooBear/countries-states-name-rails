@@ -5,30 +5,36 @@
 
 Gem::Specification.new do |s|
   s.name = "countries-states-name-rails"
-  s.version = "0.1.0"
+  s.version = "0.1.1"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Anh Nguyen"]
   s.date = "2013-04-07"
-  s.description = "Countries and US States Form Helper Dropdown"
+  s.description = "Add Countries and US States as form tag."
   s.email = "online@anhnguyen.name"
   s.extra_rdoc_files = [
     "LICENSE.txt",
     "README.md"
   ]
   s.files = [
+    "Gemfile",
+    "LICENSE.txt",
     "README.md",
+    "Rakefile",
     "VERSION",
-    "lib/action_views/helpers/countries-states-name-rails.rb"
+    "countries-states-name-rails.gemspec",
+    "lib/action_view/helpers/countries-states-name-rails.rb",
+    "spec/form_options_helper_spec.rb",
+    "spec/helper.rb"
   ]
   s.homepage = "http://github.com/iizmoo/countries-states-name-rails"
   s.licenses = ["MIT"]
   s.require_paths = ["lib"]
-  s.rubygems_version = "2.0.0"
-  s.summary = "Countries and US States Form Helper Dropdown"
+  s.rubygems_version = "1.8.25"
+  s.summary = "Extend Form Options Helper with Countries and US States"
 
   if s.respond_to? :specification_version then
-    s.specification_version = 4
+    s.specification_version = 3
 
     if Gem::Version.new(Gem::VERSION) >= Gem::Version.new('1.2.0') then
       s.add_development_dependency(%q<shoulda>, [">= 0"])
