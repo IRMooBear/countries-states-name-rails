@@ -322,41 +322,44 @@ module ActionView
 
 			def countries_tag(object, method, options = {}, html_options = {})
 				countries = @@countries.invert
-				InstanceTag.new(
-						object,
-						method,
-						self,
-						options.delete(:object)
-				).to_select_tag(countries, options, html_options)
+				Tags::Select.new(
+					object,
+					method,
+					self,
+					countries,
+					options,
+					html_options).render
 			end
 
 			def us_states_tag(object, method, options = {}, html_options = {})
 				states = @@us_states.invert
-				InstanceTag.new(
-						object,
-						method,
-						self,
-						options.delete(:object)
-				).to_select_tag(states, options, html_options)
+				Tags::Select.new(
+					object,
+					method,
+					self,
+					states,
+					options,
+					html_options
+				).render
 			end
 		end
 
 		class FormBuilder
 			def countries_field(method, options = {}, html_options = {})
 				@template.countries_tag(
-						@object_name,
-						method,
-						options.merge(:object => @object),
-						html_options
+					@object_name,
+					method,
+					objectify_options(options),
+					@default_options.merge(html_options)
 				)
 			end
 
 			def us_states_field(method, options = {}, html_options = {})
 				@template.us_states_tag(
-						@object_name,
-						method,
-						options.merge(:object => @object),
-						html_options
+					@object_name,
+					method,
+					objectify_options(options),
+					@default_options.merge(html_options)
 				)
 			end
 		end
