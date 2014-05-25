@@ -303,7 +303,7 @@ module ActionView
 					'WY'=>"Wyoming",
 			}
 
-			def states
+			def USStatesNameHelper.states
 				@@us_states
 			end
 		end
